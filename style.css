@@ -1,1 +1,115 @@
+// Requisitos para cada ramo (data-id : [ids de prerequisitos])
+const requisitos = {
+  6: [1, 2, 3, 4, 5],
+  7: [3],
+  8: [2, 3],
+  9: [4, 5],
+  10: [1, 5],
+  11: [6, 7, 8, 9, 10],
+  12: [7],
+  13: [8, 9],
+  14: [9],
+  15: [1, 2],
+  16: [11, 12, 13, 14, 15],
+  17: [11],
+  18: [11],
+  19: [11],
+  20: [4],
+  21: [16, 17, 18, 19, 20],
+  22: [17],
+  23: [18],
+  24: [19],
+  25: [13],
+  26: [21, 22, 23, 24, 25],
+  27: [22],
+  28: [24],
+  29: [16],
+  30: [5],
+  31: [26, 27, 28, 29, 30],
+  32: [27],
+  33: [21],
+  34: [23],
+  35: [],
+  36: [31, 32, 33, 34, 35],
+  37: [32],
+  38: [28],
+  39: [],
+  40: [35],
+  41: [36, 37, 38, 39, 40],
+  42: [38],
+  43: [],
+  44: [],
+  45: [],
+  46: [41, 42, 43, 44, 45],
+  47: [],
+  48: [40],
+  49: [],
+  50: [],
+  51: [46, 47, 48, 49, 50],
+  52: [],
+  53: [49],
+  54: [],
+  55: [],
+  56: [51, 52, 53, 54, 55],
+  57: [],
+  58: [],
+  59: [53],
+  60: []
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+  const ramos = document.querySelectorAll(".ramo");
+
+  ramos.forEach(ramoEl => {
+    ramoEl.addEventListener("click", () => {
+      if (ramoEl.classList.contains("bloqueado")) return;
+
+      if (ramoEl.classList.contains("aprobado")) {
+        ramoEl.classList.remove("aprobado");
+        ramoEl.classList.add("no-aprobado");
+      } else {
+        ramoEl.classList.remove("no-aprobado");
+        ramoEl.classList.add("aprobado");
+      }
+
+      actualizarBloqueos();
+    });
+  });
+
+  function actualizarBloqueos() {
+    const aprobados = new Set();
+    document.querySelectorAll(".ramo.aprobado").forEach(el => {
+      aprobados.add(parseInt(el.getAttribute("data-id")));
+    });
+
+    ramos.forEach(el => {
+      const id = parseInt(el.getAttribute("data-id"));
+
+      if (el.classList.contains("aprobado")) {
+        el.classList.remove("bloqueado");
+        el.style.cursor = "pointer";
+        return;
+      }
+
+      if (requisitos[id] && requisitos[id].length > 0) {
+        const cumple = requisitos[id].every(reqId => aprobados.has(reqId));
+        if (cumple) {
+          el.classList.remove("bloqueado");
+          el.classList.add("no-aprobado");
+          el.style.cursor = "pointer";
+        } else {
+          el.classList.add("bloqueado");
+          el.classList.remove("no-aprobado");
+          el.style.cursor = "not-allowed";
+        }
+      } else {
+        el.classList.remove("bloqueado");
+        el.classList.add("no-aprobado");
+        el.style.cursor = "pointer";
+      }
+    });
+  }
+
+  actualizarBloqueos();
+});
 
