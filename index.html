@@ -1,1 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Malla Curricular Interactiva - 12 Semestres</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #f9f9f9;
+    padding: 20px;
+  }
+  h2 {
+    margin-top: 40px;
+    color: #333;
+  }
+  .semestre {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  .ramo {
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    width: 140px;
+    height: 70px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    color: white;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    transition: background-color 0.3s;
+  }
+  /* Estados */
+  .no-aprobado {
+    background-color: #b3d9ff; /* celeste */
+    color: #004080;
+  }
+  .aprobado {
+    background-color: #003399; /* azul rey */
+    color: white;
+    text-decoration: line-through;
+  }
+  .aprobado::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 3px;
+    background: #001f4d; /* azul marino */
+    transform: rotate(45deg);
+    transform-origin: top left;
+  }
+  .bloqueado {
+    background-color: #aaa; /* gris */
+    color: #666;
+    cursor: not-allowed;
+  }
+</style>
+</head>
+<body>
+
+<h1>Malla Curricular Interactiva - 12 Semestres</h1>
+
+<!-- Semestre 1 -->
+<h2>Semestre 1</h2>
+<div class="semestre">
+  <div class="ramo no-aprobado" data-id="1">Anatomía</div>
+  <div class="ramo no-aprobado" data-id="2">Biología</div>
+  <div class="ramo no-aprobado" data-id="3">Química</div>
+  <div class="ramo no-aprobado" data-id="4">Física</div>
+  <div class="ramo no-aprobado" data-id="5">Introducción a Odontología</div>
+</div>
+
+<!-- Semestre 2 -->
+<h2>Semestre 2</h2>
+<div class="semestre">
+  <div class="ramo no-aprobado bloqueado" data-id="6">Fisiología</div>
+  <div class="ramo no-aprobado bloqueado" data-id="7">Bioquímica</div>
+  <div class="ramo no-aprobado bloqueado" data-id="8">Microbiología</div>
+  <div class="ramo no-aprobado bloqueado" data-id="9">Materiales Dentales I</div>
+  <div class="ramo no-aprobado bloqueado" data-id="10">Anatomía Dental</div>
+</div>
+
+<!-- Semestre 3 -->
+<h2>Semestre 3</h2>
+<div class="semestre">
+  <div class="ramo no-aprobado bloqueado" data-id="11">Patología</div>
+  <div class="ramo no-aprobado bloqueado" data-id="12">Farmacología</div>
+  <div class="ramo no-aprobado bloqueado" data-id="13">Radiología</div>
+  <div class="ramo no-aprobado bloqueado" data-id="14">Materiales Dentales II</div>
+  <div class="ramo no-aprobado bloqueado" data-id="15">Histología</div>
+</div>
+
+<!-- Semestre 4 -->
+<h2>Semestre 4</h2>
+<div class="semestre">
+  <div class="ramo no-aprobado bloqueado" data-id="16">Periodoncia I</div>
+  <div class="ramo no-aprobado bloqueado" data-id="17">Odontopediatría I</div>
+  <div class="ramo no-aprobado bloqueado" data-id="18">Endodoncia I</div>
+  <div class="ramo no-aprobado bloqueado" data-id="19">Cirugía Bucal I</div>
+  <div class="ramo no-aprobado bloqueado" data-id="20">Biomecánica</div>
+</div>
+
+<!-- Semestre 5 -->
+<h2>Semestre 5</h2>
+<div class="semestre">
+  <div class="ramo no-aprobado bloqueado" data-id="21">Periodoncia II</div>
+  <div class="ramo no-aprobado bloqueado" data-id="22">Odontopediatría II</div>
+  <div class="ramo no-aprobado bloqueado" data-id="23">Endodoncia II</div>
+  <div class="ramo no-aprobado bloqueado" data-id="24">Cirugía Bucal II</div>
+  <div class="ramo no-aprobado bloqueado" data-id="25">Radiología Clínica</div>
+</div>
+
+<!-- Semestre 6 -->
+<h2>Semestre 6</h2>
+<div class="semestre">
+  <div class="ramo no-aprobado bloqueado" data-id="26">Prótesis Parcial I</div>
+  <div class="ramo no-aprobado bloqueado" data-id="27">Ortodoncia I</div>
+  <div class="ramo no-aprobado bloqueado" data-id="28">Cirugía Bucal III</div>
+  <div class="ramo no-aprobado bloqueado" data-id="29">Patología Oral</div>
+  <div class="ramo no-aprobado bloqueado" data-id="30">Bioética</div>
+</div>
+
+<!-- Semestre 7 -->
+<h2>Semestre 7</h2>
+<div class="semestre">
+  <div class="ramo no-aprobado bloqueado" data-id="31">Prótesis Parcial II</div>
+  <div class="ramo no-aprobado bloqueado" data-id="32">Ortodoncia II</div>
+  <div class="ramo no-aprobado bloqueado" data-id="33">Periodoncia Clínica</div>
+  <div class="ramo no-aprobado bloqueado" data-id="34">Endodoncia Clínica</div>
+  <div class="ramo no-aprobado bloqueado" data-id="35">Investigación I</div>
+</div>
+
+<!-- Semestre 8 -->
+<h2>Semestre 8</h2>
+<div class="semestre">
+  <div class="ramo no-aprobado bloqueado" data-id="36">Prótesis Total I</div>
+  <div class="ramo no-aprobado bloqueado" data-id="37">Ortodoncia Clínica</div>
+  <div class="ramo no-aprobado bloqueado" data-id="38">Cirugía Oral Avanzada</div>
+  <div class="ramo no-aprobado bloqueado" data-id="39">Odontología Comunitaria</div>
+  <div class="ramo no-aprobado bloqueado" data-id="40">Investigación II</div>
+</div>
+
+<!-- Semestre 9 -->
+<h2>Semestre 9</h2>
+<div class="semestre">
+  <div class="ramo no-aprobado bloqueado" data-id="41">Prótesis Total II</div>
+  <div class="ramo no-aprobado bloqueado" data-id="42">Cirugía Maxilofacial I</div>
+  <div class="ramo no-aprobado bloqueado" data-id="43">Odontología Legal</div>
+  <div class="ramo no-aprobado bloqueado" data-id="44">Ética Profesional</div>
+  <div class="ramo no-aprobado bloqueado" data-id="45">Administración Clínica</div>
+</div>
+
+<!-- Semestre 10 -->
+<h2>Semestre 10</h2>
+<div class="semestre">
+  <div class="ramo no-aprobado bloqueado" data-id="46">Cirugía Maxilofacial II</div>
+  <div class="ramo no-aprobado bloqueado" data-id="47">Odontología Preventiva</div>
+  <div class="ramo no-aprobado bloqueado" data-id="48">Investigación III</div>
+  <div class="ramo no-aprobado bloqueado" data-id="49">Seminario de Titulación I</div>
+  <div class="ramo no-aprobado bloqueado" data-id="50">Educación para la Salud</div>
+</div>
+
+<!-- Semestre 11 -->
+<h2>Semestre 11</h2>
+<div class="semestre">
+  <div class="ramo no-aprobado bloqueado" data-id="51">Internado Clínico I</div>
+  <div class="ramo no-aprobado bloqueado" data-id="52">Práctica Profesional I</div>
+  <div class="ramo no-aprobado bloqueado" data-id="53">Seminario de Titulación II</div>
+  <div class="ramo no-aprobado bloqueado" data-id="54">Electivo I</div>
+  <div class="ramo no-aprobado bloqueado" data-id="55">Electivo II</div>
+</div>
+
+<!-- Semestre 12 -->
+<h2>Semestre 12</h2>
+<div class="semestre">
+  <div class="ramo no-aprobado bloqueado" data-id="56">Internado Clínico II</div>
+  <div class="ramo no-aprobado bloqueado" data-id="57">Práctica Profesional II</div>
+  <div class="ramo no-aprobado bloqueado" data-id="58">Electivo III</div>
+  <div class="ramo no-aprobado bloqueado" data-id="59">Seminario de Titulación III</div>
+  <div class="ramo no-aprobado bloqueado" data-id="60">Trabajo de Titulación</div>
+</div>
+
+</body>
+</html>
 
